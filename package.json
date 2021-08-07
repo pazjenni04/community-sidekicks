@@ -4,8 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "seeds": "node seeds/index.js"
   },
   "repository": {
     "type": "git",
@@ -20,8 +20,14 @@
   "homepage": "https://github.com/pazjenni04/community-sidekicks#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "express-handlebars": "^5.3.3",
+    "express-router": "0.0.1",
+    "express-session": "^1.17.2",
     "mysql2": "^2.3.0",
     "passport": "^0.4.1",
     "sequelize": "^6.6.5"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0"
   }
 }
