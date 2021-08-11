@@ -1,5 +1,5 @@
 const user = require('./user');
-const VolunteerHours = require('./volunteer-hours');
+const VolunteerHours = require('./volunteer-hours')
 
 user.hasMany(VolunteerHours, {
   foreignKey: 'user_id',
