@@ -1,8 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const passport = require('passport');
-const VolunteerHours = require('./volunteer-hours');
-
 
 class VolunteerHours extends Model {}
 
@@ -40,4 +38,4 @@ VolunteerHours.init(
 
 
 
-module.exports = { VolunteerHours };
+module.exports = VolunteerHours;
