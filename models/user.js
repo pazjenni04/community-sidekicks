@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require("sequelize");
 const passport = require("passport");
 const sequelize = require("../config/connection");
-const user = require("./user");
+
 class user extends Model {
   checkPassword(login) {
     return passport.compareSync(login, this.password);
@@ -58,4 +58,4 @@ user.init(
   }
 );
 
-module.exports = { user };
+module.exports =  user;
