@@ -1,45 +1,65 @@
-{{! This page should display the login info - user needs to be able to 
-type in their username and password to login }}
-
-{{! page needs to include a login button }}
-
 <div class="row">
   <div class="col-md-6">
     <h2>Login</h2>
-
-    <form class="form login-form">
+    
+    <form>
+      
       <div class="form-group">
-        <label for="email-login">email:</label>
-        <input class="form-input" type="text" id="email-login" />
+      <label for="exampleInputEmail1">Email address</label>
+        <input
+        type="email"
+        class="form-control"
+        id="userEmail"
+        aria-describedby="emailHelp"
+        placeholder="Enter email"
+        />
       </div>
+      
       <div class="form-group">
-        <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
+      <label for="exampleInputPassword1">Password</label>
+        <input
+        type="password"
+        class="form-control"
+        id="userPassword"
+        placeholder="Password"
+        />
       </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-    </form>
-  </div>
+  {{! <div class="form-group form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div> }}
+  <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
+</form>
+  
 </div>
+</div>
+
   <div class="col-md-6">
-    <h2>Signup</h2>
+    <h2>Don't have an account? Create a new account.</h2>
 
     <form class="form signup-form">
       <div class="form-group">
-        <label for="name-signup">name:</label>
-        <input class="form-input" type="text" id="name-signup" />
+        <label for="name-signup">First Name</label>
+        <input class="form-input" type="text" id="firstName" />
       </div>
       <div class="form-group">
-        <label for="email-signup">email:</label>
+        <label for="name-signup">Last Name</label>
+        <input class="form-input" type="text" id="lastName" />
+      </div>
+      <div class="form-group">
+        <label for="email-signup">Username</label>
+        <input class="form-input" type="text" id="newUsername" />
+      </div>
+      <div class="form-group">
+        <label for="email-signup">Email</label>
         <input class="form-input" type="text" id="email-signup" />
       </div>
       <div class="form-group">
-        <label for="password-signup">password:</label>
+        <label for="password-signup">Password</label>
         <input class="form-input" type="password" id="password-signup" />
       </div>
       <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
+        <button class="btn btn-primary" type="submit" id="signupBtn">Signup</button>
       </div>
     </form>
   </div>
@@ -47,29 +67,4 @@ type in their username and password to login }}
 
 <script src="./js/login.js"></script>
 =======
-<form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input
-      type="email"
-      class="form-control"
-      id="userEmail"
-      aria-describedby="emailHelp"
-      placeholder="Enter email"
-    />
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input
-      type="password"
-      class="form-control"
-      id="userPassword"
-      placeholder="Password"
-    />
-  </div>
-  {{! <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div> }}
-  <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
-</form>
+
