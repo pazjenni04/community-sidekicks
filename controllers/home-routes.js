@@ -34,7 +34,7 @@ router.get('/VolunteerHours/:id', async (req, res) => {
     const dbvolunteehoursData = await VolunteerHours.findByPk(req.params.id, {
       include: [
         {
-          model: user,
+          model: VolunteerHours,
           attributes: [
             'id',
             'name_organization',
