@@ -19,6 +19,10 @@ VolunteerHours.init(
     description: {
       type: DataTypes.TEXT,
     },
+    hours: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
