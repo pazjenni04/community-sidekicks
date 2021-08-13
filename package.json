@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/pazjenni04/community-sidekicks#readme",
   "dependencies": {
+    "connect-session-sequelize": "^7.1.1",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.3",
     "express-router": "0.0.1",
