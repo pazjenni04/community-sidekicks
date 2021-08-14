@@ -1,13 +1,9 @@
-const User = require("./user");
-const VolunteerHours = require("./volunteer-hours");
+const User = require("./user"); //organization
+const VolunteerHours = require("./volunteer-hours"); //creating volunteer 
 
 User.hasMany(VolunteerHours, {
-  foreignKey: "user_id",
+  foreignKey: "VolunteerHours.id",
   onDelete: "CASCADE",
-});
-
-VolunteerHours.belongsTo(User, {
-  foreignKey: "user_id",
 });
 
 module.exports = { User, VolunteerHours };

@@ -1,3 +1,5 @@
+//organization login
+
 const { Model, DataTypes } = require("sequelize");
 const bcrypt = require("bcrypt");
 const sequelize = require("../config/connection");
@@ -10,11 +12,7 @@ class User extends Model {
 
 User.init(
   {
-    first_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    last_name: {
+    organization_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },

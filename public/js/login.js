@@ -28,8 +28,7 @@ let submitForm = form.submit.addEventListener("click", (event) => {
 const newAccount = async (event) => {
   event.preventDefault();
 
-  const firstName = document.getElementById("firstName").value;
-  const lastName = docuemtn.getElementById("lastName").value;
+  const organization_name = document.getElementById("organization_name").value;
   const newEmail = document.getElementById("email-signup").value.trim();
   const newPassword = document.getElementById("password-signup").value.trim();
 
