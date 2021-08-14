@@ -12,12 +12,12 @@ let submitForm = form.submit.addEventListener("click", (event) => {
   if (email && password) {
     const response = fetch("/api/user/login", {
       method: "POST",
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ email: email, password: password }),
       headers: { "Content-Type": "application/json" },
     });
 
     if (response.ok) {
-      document.location.replace("/");
+      document.location.replace("/api/volunteerhours");
     } else {
       alert("Login failed. Try again.");
     }
@@ -28,7 +28,8 @@ let submitForm = form.submit.addEventListener("click", (event) => {
 const newAccount = async (event) => {
   event.preventDefault();
 
-  const organization_name = document.getElementById("organization_name").value;
+  const firstName = document.getElementById("firstName").value;
+  const lastName = docuemtn.getElementById("lastName").value;
   const newEmail = document.getElementById("email-signup").value.trim();
   const newPassword = document.getElementById("password-signup").value.trim();
 
@@ -48,7 +49,7 @@ const newAccount = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/");
+      document.location.replace("/api/volunteerhours");
     } else {
       alert("Failed to sign up");
     }

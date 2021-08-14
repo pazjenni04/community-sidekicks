@@ -2,13 +2,15 @@
 
 <section class="UserContainer">
   
-    <h3> Full name: {{user.first_name, user.last_name}}</h3>
+  {{#each users as |user| }}
+    <h3> Full name: {{user.first_name}} {{user.last_name}}</h3>
     <p> Email: {{user.email}}</p>
     <h4> Volunteer History</h4>
     {{Volunteerhours.hours}}
 
 
   </div>
+  {{/each}}
 </section>
 
 
