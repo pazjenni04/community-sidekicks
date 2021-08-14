@@ -4,41 +4,39 @@ let submitForm = form.submit.addEventListener("click", (event) => {
   event.preventDefault();
 
   const form = {
-    email: document.querySelector("#userEmail").value.trim(),
-    password: document.querySelector("#userPassword").value.trim(),
+    email: document.querySelector("#orgEmail").value.trim(),
+    password: document.querySelector("#orgPassword").value.trim(),
     submit: document.querySelector("#submitBtn"),
   };
 
   if (email && password) {
-    const response = fetch("/api/user/login", {
+    const response = fetch("/api/organization/login", {
       method: "POST",
       body: JSON.stringify({ email: email, password: password }),
       headers: { "Content-Type": "application/json" },
     });
 
     if (response.ok) {
-      document.location.replace("/api/volunteerhours");
+      document.location.replace("/api/volunteer");
     } else {
       alert("Login failed. Try again.");
     }
   }
 });
 
-//new sign-up (account)
+//new org sign-up (account)
 const newAccount = async (event) => {
   event.preventDefault();
 
-  const firstName = document.getElementById("firstName").value;
-  const lastName = docuemtn.getElementById("lastName").value;
+  const organizationName = document.getElementById("organization_name").value;
   const newEmail = document.getElementById("email-signup").value.trim();
   const newPassword = document.getElementById("password-signup").value.trim();
 
-  if (firstName && lastName && newEmail && newPassword) {
+  if (organizationName && newEmail && newPassword) {
     const response = await fetch("/api/user", {
       method: "POST",
       body: JSON.stringify({
-        first_name: firstName,
-        last_name: lastName,
+        organization_name: organizationName,
         email: newEmail,
         password: newPassword,
       }),
@@ -49,7 +47,7 @@ const newAccount = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/api/volunteerhours");
+      document.location.replace("/api/volunteer");
     } else {
       alert("Failed to sign up");
     }

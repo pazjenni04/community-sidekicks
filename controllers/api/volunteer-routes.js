@@ -1,19 +1,19 @@
 const router = require("express").Router();
 const sequelize = require("../../config/connection");
-const VolunteerHours = require("../../models/volunteer-hours");
-const User = require("../../models/user");
+const Volunteer = require("../../models/volunteer");
+const User = require("../../models/organization");
 
-// GET all volunteerhours for account
+// GET all volunteers for account
 router.get("/", async (req, res) => {
   try {
-    const dbvolunteerhoursData = await VolunteerHours.findAll();
+    const dbvolunteersData = await Volunteer.findAll();
 
-    const VolHours = dbvolunteerhoursData.map((VolunteerHours) =>
-      VolunteerHours.get({ plain: true })
+    const allVolunteers = dbvolunteersData.map((volunteers) =>
+      volunteers.get({ plain: true })
     );
 
-    res.render("volunteer-hours", {
-      VolHours,
+    res.render("volunteers", {
+      allVolunteers,
     });
   } catch (err) {
     console.log(err);
@@ -21,38 +21,46 @@ router.get("/", async (req, res) => {
   }
 });
 
-// GET one volunteer experience
+//renders all volunteers in the system from volunteer form
+router.get("/all", async (req, res) => {
+  try {
+    const allVolunteers = await Volunteer.findAll();
+
+    const volunteers = allVolunteers.map((project) =>
+      project.get({ plain: true })
+    );
+
+    res.render("volunteers", {
+      volunteers,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
+});
+
+// GET one volunteer
 router.get("/:id", async (req, res) => {
   try {
-    const dbvolunteehoursData = await VolunteerHours.findByPk(req.params.id, {
+    const dbvolunteersData = await Volunteer.findByPk(req.params.id, {
       include: [
         {
-          model: VolunteerHours,
-          attributes: ["id", "name_organization", "description"],
+          model: Volunteer,
+          where: { first_name: req.body.first_name },
         },
       ],
     });
 
-    const volunteerhours = dbvolunteehoursData.get({ plain: true });
-    res.render("volunteer-hours", { volunteerhours });
+    const volunteerAvailable = dbvolunteersData.get({ plain: true });
+    res.render("volunteers", {
+      volunteersAvailable,
+      logged_in: req.session.logged_in,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
-
-// GET one painting
-// router.get("/user/:id", async (req, res) => {
-//   try {
-//     const dbuserData = await user.findByPk(req.params.id);
-
-//     const painting = dbuserData.get({ plain: true });
-
-//     res.render("user", { user });
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
 
 module.exports = router;

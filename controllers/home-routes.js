@@ -1,7 +1,6 @@
 const router = require("express").Router();
-
 const sequelize = require("../config/connection");
-const { VolunteerHours, User } = require("../models");
+const { Volunteer, Organization } = require("../models");
 
 // renders homepage
 router.get("/", async (req, res) => {
@@ -22,7 +21,8 @@ router.get("/login", (req, res) => {
   res.render("login-page");
 });
 
-router.post('/logout', (req, res) => {
+//logs org out
+router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
@@ -32,5 +32,5 @@ router.post('/logout', (req, res) => {
   }
 });
 
-//add route for logout 
+//add route for logout
 module.exports = router;
