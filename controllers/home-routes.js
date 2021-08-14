@@ -22,4 +22,5 @@ router.get("/login", (req, res) => {
   res.render("login-page");
 });
 
+//add route for logout 
 module.exports = router;
