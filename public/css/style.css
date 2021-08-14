@@ -1,3 +1,21 @@
 h1 {
   text-align: center;
 }
+
+.login-page {
+  background-color: beige;
+}
+
+header,
+html {
+  background: lightskyblue;
+  padding: 5px, 0px, 0px, 5px;
+}
+
+.loginbtn {
+  font-weight: 700;
+  background-color: darkblue;
+  color: whitesmoke;
+  border-radius: 7px;
+  padding: 5px;
+}
