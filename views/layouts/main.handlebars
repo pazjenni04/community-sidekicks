@@ -6,6 +6,11 @@
   <title>Community Sidekicks</title>
   <link rel="stylesheet" href="/css/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Palette+Mosaic&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -13,18 +18,19 @@
     <header class="display-flex justify-space-between align-center p-2">
       <nav class="navbar navbar-expand-lg navbar-light bg-green">
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+           <a href="/">        
+          <button class="homebtn" id="home">Home</button>
+          </a> 
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/user">profile</a> 
+        <a href="/organization">profile</a> 
         <button class="no-button" id="logout">logout</button>
         {{else}}
         <a class="loginbtn" href="/login">Organization Login</a>
         {{/if}}
           </div>
       </nav>
-      <h1>
-        <p href="/">Community Sidekicks</p>
-      </h1>
+      <h1 href="/">Community Sidekicks</h1>
     </header>
 
     <main class="container container-fluid mt-5">
