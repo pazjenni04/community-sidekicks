@@ -1,6 +1,7 @@
+//intersted in volunteering form 
+
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-const passport = require('passport');
 
 class VolunteerHours extends Model {}
 
@@ -12,23 +13,21 @@ VolunteerHours.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name_organization: {
+    first_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
-      type: DataTypes.TEXT,
-    },
-    hours: {
-      type: DataTypes.INTEGER,
+    last_name: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
-    user_id: {
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    phone: {
       type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
+      allowNull: false,
     },
   },
   {
