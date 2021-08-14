@@ -65,6 +65,15 @@ router.get("/all", async (req, res) => {
   }
 });
 
+router.get("/signup", async (req, res) => {
+  try {
+    res.render("organization-signup");
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
+});
+
 router.post("/logout", (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
