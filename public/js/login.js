@@ -17,7 +17,7 @@ let submitForm = form.submit.addEventListener("click", (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/api/volunteer");
+      document.location.replace("/");
     } else {
       alert("Login failed. Try again.");
     }
@@ -47,7 +47,7 @@ const newAccount = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/api/volunteer");
+      document.location.replace("/");
     } else {
       alert("Failed to sign up");
     }
