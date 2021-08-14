@@ -1,16 +1,18 @@
 const router = require("express").Router();
 const { User } = require("../../models");
+const Organization = require("../../models/organization");
 // const withAuth = require('../../utils/auth');
 
+//creates organization account
 router.post("/", async (req, res) => {
   try {
-    const userData = await User.create(req.body);
+    const orgData = await User.create(req.body);
 
     req.session.save(() => {
-      req.session.user_id = userData.id;
+      req.session.user_id = orgData.id;
       req.session.logged_in = true;
 
-      res.status(200).json(userData);
+      res.status(200).json(orgData);
     });
   } catch (err) {
     console.log(err);
@@ -18,17 +20,19 @@ router.post("/", async (req, res) => {
   }
 });
 
-//logs into the account
+//logs into organization account
 router.post("/login", async (req, res) => {
   try {
-    const userData = await user.findOne({ where: { email: req.body.email } });
-    if (!userData) {
+    const orgData = await Organization.findOne({
+      where: { email: req.body.email },
+    });
+    if (!orgData) {
       res
         .status(400)
         .json({ message: "Incorrect email or password, please try again" });
       return;
     }
-    const validPassword = await userData.checkPassword(req.body.password);
+    const validPassword = await orgData.checkPassword(req.body.password);
 
     if (!validPassword) {
       res
@@ -38,31 +42,12 @@ router.post("/login", async (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.user_id = userData.id;
+      req.session.user_id = orgData.id;
       req.session.logged_in = true;
 
       res.json({ user: userData, message: "You are now logged in!" });
     });
   } catch (err) {
-    res.status(400).json(err);
-  }
-});
-
-//renders all volunteers in the system from volunteer form
-router.get("/all", async (req, res) => {
-  try {
-    const allUsers = await User.findAll({
-      attributes: { exclude: ["password"] },
-    });
-
-    const users = allUsers.map((project) => project.get({ plain: true }));
-
-    res.render("user", {
-      users,
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    console.log(err);
     res.status(400).json(err);
   }
 });

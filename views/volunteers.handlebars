@@ -1,0 +1,18 @@
+<!-- Shows all the users volunteer history/ log a new project!--> 
+
+<section class="UserContainer">
+  
+  {{#each volunteers as |volunteer| }}
+    <h3> Full name: {{volunteer.first_name}} {{volunteer.last_name}}</h3>
+    <p> Contact info: </p>
+    <ul>
+      <li>Email: {{volunteer.email}}</li>
+      <li>Phone number: {{volunteer.phone}}</li>
+    </ul>
+    <h4> Volunteer History</h4>
+    {{Volunteer.hours}}
+
+
+  </div>
+  {{/each}}
+</section>
