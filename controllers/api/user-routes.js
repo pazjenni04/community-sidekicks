@@ -18,6 +18,7 @@ router.post("/", async (req, res) => {
   }
 });
 
+//logs into the account
 router.post("/login", async (req, res) => {
   try {
     const userData = await user.findOne({ where: { email: req.body.email } });
@@ -47,6 +48,7 @@ router.post("/login", async (req, res) => {
   }
 });
 
+//renders all volunteers in the system from volunteer form
 router.get("/all", async (req, res) => {
   try {
     const allUsers = await User.findAll({
@@ -65,15 +67,17 @@ router.get("/all", async (req, res) => {
   }
 });
 
+//should render sign up page for organization
 router.get("/signup", async (req, res) => {
   try {
-    res.render("organization-signup");
+    res.render("organizationsignup");
   } catch (err) {
     console.log(err);
-    res.status(400).json(err);
+    res.status(404).json(err);
   }
 });
 
+//logout
 router.post("/logout", (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
