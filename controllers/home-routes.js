@@ -1,7 +1,7 @@
 const router = require("express").Router();
 
 const sequelize = require("../config/connection");
-const { VolunteerHours, user } = require("../models");
+const { VolunteerHours, User } = require("../models");
 
 // renders homepage
 router.get("/", async (req, res) => {

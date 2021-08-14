@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const sequelize = require("../../config/connection");
 const VolunteerHours = require("../../models/volunteer-hours");
-const user = require("../../models/user");
+const User = require("../../models/user");
 
 // GET all volunteerhours for account
 router.get("/", async (req, res) => {

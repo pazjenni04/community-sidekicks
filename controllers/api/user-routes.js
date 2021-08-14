@@ -47,6 +47,24 @@ router.post("/login", async (req, res) => {
   }
 });
 
+router.get("/all", async (req, res) => {
+  try {
+    const allUsers = await User.findAll({
+      attributes: { exclude: ["password"] },
+    });
+
+    const users = allUsers.map((project) => project.get({ plain: true }));
+
+    res.render("user", {
+      users,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(400).json(err);
+  }
+});
+
 router.post("/logout", (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {

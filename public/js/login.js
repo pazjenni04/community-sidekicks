@@ -12,12 +12,12 @@ let submitForm = form.submit.addEventListener("click", (event) => {
   if (email && password) {
     const response = fetch("/api/user/login", {
       method: "POST",
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ email: email, password: password }),
       headers: { "Content-Type": "application/json" },
     });
 
     if (response.ok) {
-      document.location.replace("/");
+      document.location.replace("/api/volunteerhours");
     } else {
       alert("Login failed. Try again.");
     }
@@ -49,7 +49,7 @@ const newAccount = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/");
+      document.location.replace("/api/volunteerhours");
     } else {
       alert("Failed to sign up");
     }
