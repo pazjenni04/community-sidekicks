@@ -32,19 +32,20 @@ const newAccount = async (event) => {
   const lastName = docuemtn.getElementById("lastName").value;
   const newEmail = document.getElementById("email-signup").value.trim();
   const newPassword = document.getElementById("password-signup").value.trim();
-  const newUsername = document.getElementById("newUsername").value.trim();
 
-  if (firstName && lastName && newEmail && newPassword && newUsername) {
+  if (firstName && lastName && newEmail && newPassword) {
     const response = await fetch("/api/user", {
       method: "POST",
       body: JSON.stringify({
-        firstName,
-        lastName,
-        newEmail,
-        newPassword,
-        newUsername,
+        first_name: firstName,
+        last_name: lastName,
+        email: newEmail,
+        password: newPassword,
       }),
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
     });
 
     if (response.ok) {
