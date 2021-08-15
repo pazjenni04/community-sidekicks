@@ -12,6 +12,12 @@ class Organization extends Model {
 
 Organization.init(
   {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      allowNull: false,
+      primaryKey: true,
+    },
     organization_name: {
       type: DataTypes.STRING,
       allowNull: false,

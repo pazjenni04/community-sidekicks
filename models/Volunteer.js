@@ -35,7 +35,7 @@ Volunteer.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "volunteers",
+    modelName: "volunteer",
   }
 );
 
