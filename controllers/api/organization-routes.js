@@ -62,6 +62,27 @@ router.get("/signup", async (req, res) => {
   }
 });
 
+// Use withAuth middleware to prevent access to route
+router.get('/profile', async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const orgData = await Organization.findByPk(req.session.id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Organization }],
+    });
+
+    const organization = orgData.get({ plain: true });
+
+    res.render('organization', {
+      ...organization,
+      logged_in: true
+    });
+  } catch (err) {
+    console.log(err)
+    res.status(500).json(err);
+  }
+});
+
 //logout
 router.post("/logout", (req, res) => {
   if (req.session.logged_in) {
