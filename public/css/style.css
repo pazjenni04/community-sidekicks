@@ -13,7 +13,8 @@ html {
 }
 
 .loginbtn,
-.homebtn {
+.homebtn,
+.volunteerSignupbtn {
   font-weight: 700;
   background-color: forestgreen;
   color: black;

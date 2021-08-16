@@ -12,6 +12,16 @@ router.get("/", async (req, res) => {
   }
 });
 
+// volunteer-signup form
+router.get("/volunteerSignup", (req, res) => {
+  try {
+  res.render("volunteer-signup");
+}catch (err) {
+  console.log(err);
+  res.status(500).json(err);
+}
+});
+
 // Login route
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
