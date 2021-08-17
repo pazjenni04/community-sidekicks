@@ -9,7 +9,7 @@
         <input
         type="email"
         class="form-control"
-        id="userEmail"
+        id="orgEmail"
         aria-describedby="emailHelp"
         placeholder="Enter email"
         />
@@ -20,22 +20,16 @@
         <input
         type="password"
         class="form-control"
-        id="userPassword"
+        id="orgPassword"
         placeholder="Password"
         />
       </div>
-  {{! <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div> }}
   <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
 
   <P>Don't have an account?
-  <a href="/user">profile</a>
-  </P>
-
+  <a href="/api/organization/signup" id= "orgSignUp">Create profile</a></P>
 </form>
-  
+
 </div>
 </div>
 </div>

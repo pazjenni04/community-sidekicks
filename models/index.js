@@ -1,9 +1,9 @@
-const User = require("./user"); //organization
-const VolunteerHours = require("./volunteer-hours"); //creating volunteer 
+const Organization = require("./organization"); //organization route
+const Volunteer = require("./Volunteer"); //volunteer route
 
-User.hasMany(VolunteerHours, {
-  foreignKey: "VolunteerHours.id",
+Organization.hasMany(Volunteer, {
+  foreignKey: "Volunteer.id",
   onDelete: "CASCADE",
 });
 
-module.exports = { User, VolunteerHours };
+module.exports = { Organization, Volunteer };

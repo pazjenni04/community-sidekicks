@@ -1,23 +1,44 @@
 [
   {
-    "id": "1",
-    "name_organization": "North Texas Food Bank",
-    "description": "Sorted incoming food from donations",
-    "hours": 3,
-    "user_id": 1
+    "first_name": "Jane",
+    "last_name": "Doe",
+    "email":"jane.doe@gmail.com",
+    "phone": "1234567890",
+    "zip_code": 75234
   },
   {
-    "id": "2",
-    "name_organization": "St. Vincent De Paul",
-    "description": "Sorted incoming clothes from donations",
-    "hours": 2,
-    "user_id": 1
+    "first_name":"John", 
+    "last_name":"Doe",
+    "email": "john.doe@gmail.com",
+    "phone": "1234567890",
+    "zip_code": 75205
   },
   {
-    "id": "3",
-    "name_organization": "St. Vincent De Paul",
-    "description": "Sorted incoming clothes and items from donations",
-    "hours": 3, 
-    "user_id": 2
+    "first_name":"Pam", 
+    "last_name":"Beasly",
+    "email": "pam.beasly@gmail.com",
+    "phone": "000000000",
+    "zip_code": 75019
+  },
+  {
+    "first_name":"Jim", 
+    "last_name":"Halpert",
+    "email": "jim.halpert@gmail.com",
+    "phone": "000000000",
+    "zip_code": 75001
+  },
+  {
+    "first_name":"Michael", 
+    "last_name":"Scott",
+    "email": "michael.halpert@gmail.com",
+    "phone": "000000000",
+    "zip_code": 75043
+  },
+  {
+    "first_name":"Dwight", 
+    "last_name":"Schrute",
+    "email": "dwight.schrute@gmail.com",
+    "phone": "000000000",
+    "zip_code": 75052
   }
 ]

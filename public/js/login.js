@@ -1,54 +1,52 @@
 //form to login to an existing account
+const form = {
+  submit: document.querySelector("#submitBtn"),
+};
 
 let submitForm = form.submit.addEventListener("click", (event) => {
   event.preventDefault();
 
-  const form = {
-    email: document.querySelector("#userEmail").value.trim(),
-    password: document.querySelector("#userPassword").value.trim(),
-    submit: document.querySelector("#submitBtn"),
-  };
+  let email = document.querySelector("#orgEmail").value.trim();
+  let password = document.querySelector("#orgPassword").value.trim();
 
   if (email && password) {
-    const response = fetch("/api/user/login", {
+    const response = fetch("/api/organization/login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
       headers: { "Content-Type": "application/json" },
+    }).then(function (response) {
+      if (response.ok) {
+        document.location.replace("/profile");
+      } else {
+        alert("Login failed. Try again.");
+      }
     });
-
-    if (response.ok) {
-      document.location.replace("/");
-    } else {
-      alert("Login failed. Try again.");
-    }
   }
 });
 
-//new sign-up (account)
+//new org sign-up (account)
 const newAccount = async (event) => {
   event.preventDefault();
 
-  const organization_name = document.getElementById("organization_name").value;
+  const organizationName = document.getElementById("organization_name").value;
   const newEmail = document.getElementById("email-signup").value.trim();
   const newPassword = document.getElementById("password-signup").value.trim();
 
-  if (firstName && lastName && newEmail && newPassword) {
-    const response = await fetch("/api/user", {
+  if (organizationName && newEmail && newPassword) {
+    const response = await fetch("/api/organization/signup", {
       method: "POST",
       body: JSON.stringify({
-        first_name: firstName,
-        last_name: lastName,
+        organization_name: organizationName,
         email: newEmail,
         password: newPassword,
       }),
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json",
       },
     });
 
     if (response.ok) {
-      document.location.replace("/");
+      document.location.replace("/api/organization/profile");
     } else {
       alert("Failed to sign up");
     }
@@ -57,4 +55,10 @@ const newAccount = async (event) => {
 
 //event listener for signup
 
-document.getElementById("signupBtn").addEventListener("submit", newAccount);
+document.addEventListener("DOMContentLoaded", function (event) {
+  console.log(document.querySelector("div"));
+});
+
+if (document.getElementById("signupBtn")) {
+  document.getElementById("signupBtn").addEventListener("submit", newAccount);
+}

@@ -1,23 +1,29 @@
 const sequelize = require('../config/connection');
-const { user, VolunteerHours } = require('../models');
+const { Organization, Volunteer } = require('../models');
 
-const userData = require('./user-seeds.json');
-const volunteerHoursData = require('./volunteer-seeds.json');
+const orgData = require('./Org-seeds.json');
+const volData = require('./volunteer-seeds.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  const users = await user.bulkCreate(userData, {
+  const organization = await Organization.bulkCreate(orgData, {
     individualHooks: true,
     returning: true,
   });
 
-  for (const volunteer_hours of volunteerHoursData) {
-    await VolunteerHours.create({
-      ...volunteer_hours,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
-    });
-  }
+  const volunteer = await Volunteer.bulkCreate(volData, {
+    individualHooks: true,
+    returning: true,
+  });
+//   for (const volunteer_data of volData
+//   ) {
+//     await Organization.create({
+//       ...volunteer_data
+// ,
+//       user_id: organization[Math.floor(Math.random() * organization.length)].id,
+//     });
+//   }
 
   process.exit(0);
 };

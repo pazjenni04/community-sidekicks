@@ -1,11 +1,11 @@
-//intersted in volunteering form 
+//intersted in volunteering form
 
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
-class VolunteerHours extends Model {}
+class Volunteer extends Model {}
 
-VolunteerHours.init(
+Volunteer.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -24,10 +24,20 @@ VolunteerHours.init(
     email: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        isEmail: true,
+      }
     },
     phone: {
       type: DataTypes.INTEGER,
       allowNull: false,
+    },
+    zip_code: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        isNumeric: true,
+      },
     },
   },
   {
@@ -35,10 +45,8 @@ VolunteerHours.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'VolunteerHours',
+    modelName: "volunteer",
   }
 );
 
-
-
-module.exports = VolunteerHours;
+module.exports = Volunteer;
