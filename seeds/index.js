@@ -7,19 +7,19 @@ const volData = require('./volunteer-seeds.json');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  const organizations = await Volunteer.bulkCreate(orgData, {
+  const organization = await Organization.bulkCreate(orgData, {
     individualHooks: true,
     returning: true,
   });
 
-  for (const volunteer_data of volData
-  ) {
-    await Volunteer.create({
-      ...volunteer_data
-,
-      user_id: organization[Math.floor(Math.random() * organization.length)].id,
-    });
-  }
+//   for (const volunteer_data of volData
+//   ) {
+//     await Organization.create({
+//       ...volunteer_data
+// ,
+//       user_id: organization[Math.floor(Math.random() * organization.length)].id,
+//     });
+//   }
 
   process.exit(0);
 };

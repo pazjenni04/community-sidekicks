@@ -3,6 +3,14 @@
     "first_name": "Jane",
     "last_name": "Doe",
     "email":"jane.doe@gmail.com",
-    "phone": "1234567890"
+    "phone": "1234567890",
+    "zip_code": 75234
+  },
+  {
+    "first_name":"Admin", 
+    "last_name":"Admin",
+    "email": "admin@gmail.com",
+    "phone": "1234567890",
+    "zip_code": 75205
   }
 ]

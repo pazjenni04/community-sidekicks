@@ -4,8 +4,10 @@ const newVolunteer = async (event) => {
 
   const volFname = document.getElementById("first_name").value.trim();
   const volLname = document.getElementById("last_name").value.trim();
-  const volEmail = document.getElementById("volEmail").value.trim();
-  const volPhone = document.getElementById("volPhone").value.trim();
+  const volEmail = document.getElementById("volemail").value.trim();
+  const volPhone = document.getElementById("volphone").value.trim();
+  const volzip = document.getElementById("volzip").value.trim();
+
 
   if (volFname && volLname && volEmail && volPhone) {
     const response = await fetch("/api/volunteers", {
