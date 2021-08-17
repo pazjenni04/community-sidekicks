@@ -1,26 +1,26 @@
 //form to login to an existing account
+const form = {
+  submit: document.querySelector("#submitBtn"),
+};
 
 let submitForm = form.submit.addEventListener("click", (event) => {
   event.preventDefault();
 
-  const form = {
-    email: document.querySelector("#orgEmail").value.trim(),
-    password: document.querySelector("#orgPassword").value.trim(),
-    submit: document.querySelector("#submitBtn"),
-  };
+  let email = document.querySelector("#orgEmail").value.trim();
+  let password = document.querySelector("#orgPassword").value.trim();
 
   if (email && password) {
     const response = fetch("/api/organization/login", {
       method: "POST",
-      body: JSON.stringify({ email: email, password: password }),
+      body: JSON.stringify({ email, password }),
       headers: { "Content-Type": "application/json" },
+    }).then(function (response) {
+      if (response.ok) {
+        document.location.replace("/api/organization/profile");
+      } else {
+        alert("Login failed. Try again.");
+      }
     });
-
-    if (response.ok) {
-      document.location.replace("/");
-    } else {
-      alert("Login failed. Try again.");
-    }
   }
 });
 
@@ -33,7 +33,7 @@ const newAccount = async (event) => {
   const newPassword = document.getElementById("password-signup").value.trim();
 
   if (organizationName && newEmail && newPassword) {
-    const response = await fetch("/api/user", {
+    const response = await fetch("/api/organization/signup", {
       method: "POST",
       body: JSON.stringify({
         organization_name: organizationName,
@@ -42,12 +42,11 @@ const newAccount = async (event) => {
       }),
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json",
       },
     });
 
     if (response.ok) {
-      document.location.replace("/");
+      document.location.replace("/api/organization/profile");
     } else {
       alert("Failed to sign up");
     }
@@ -56,4 +55,10 @@ const newAccount = async (event) => {
 
 //event listener for signup
 
-document.getElementById("signupBtn").addEventListener("submit", newAccount);
+document.addEventListener("DOMContentLoaded", function (event) {
+  console.log(document.querySelector("div"));
+});
+
+if (document.getElementById("signupBtn")) {
+  document.getElementById("signupBtn").addEventListener("submit", newAccount);
+}

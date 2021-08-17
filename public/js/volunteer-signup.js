@@ -14,24 +14,29 @@ const newVolunteer = async (event) => {
         first_name: volFname,
         last_name: volLname,
         email: volEmail,
-        phone: volPhone
+        phone: volPhone,
+        zip_code: volzip,
       }),
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
-      }
+      },
     });
 
     if (response.ok) {
       document.location.replace("/");
-      console.log("Volunteer Successfully Entered Information")
-      alert ("Volunteer Information Successfully Uploaded! Organizations will contact you for help!")
+      console.log("Volunteer Successfully Entered Information");
+      alert(
+        "Volunteer Information Successfully Uploaded! Organizations will contact you for help!"
+      );
     } else {
       alert("Please try again! Volunteer information NOT uploaded");
-      console.log("Volunteer info NOT uploaded succesfully")
+      console.log("Volunteer info NOT uploaded succesfully");
     }
   }
 };
 
 //event listener for signup
-document.getElementById("volsignupBtn").addEventListener("submit", newVolunteer);
+document
+  .getElementById("volsignupBtn")
+  .addEventListener("submit", newVolunteer);

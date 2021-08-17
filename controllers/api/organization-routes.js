@@ -6,7 +6,7 @@ const Organization = require("../../models/organization");
 //creates organization account
 router.post("/", async (req, res) => {
   try {
-    const orgData = await User.create(req.body);
+    const orgData = await Organization.create(req.body);
 
     req.session.save(() => {
       req.session.user_id = orgData.id;
@@ -26,13 +26,17 @@ router.post("/login", async (req, res) => {
     const orgData = await Organization.findOne({
       where: { email: req.body.email },
     });
+    console.log(orgData);
+
     if (!orgData) {
       res
         .status(400)
         .json({ message: "Incorrect email or password, please try again" });
       return;
     }
-    const validPassword = await orgData.checkPassword(req.body.password);
+    const validPassword = orgData.checkPassword(req.body.password);
+
+    console.log("validPassword", validPassword);
 
     if (!validPassword) {
       res
@@ -45,7 +49,7 @@ router.post("/login", async (req, res) => {
       req.session.user_id = orgData.id;
       req.session.logged_in = true;
 
-      res.json({ user: userData, message: "You are now logged in!" });
+      res.json({ user: orgData, message: "You are now logged in!" });
     });
   } catch (err) {
     res.status(400).json(err);
@@ -63,22 +67,21 @@ router.get("/signup", async (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
-router.get('/profile', async (req, res) => {
+router.get("/profile", async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const orgData = await Organization.findByPk(req.session.id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Organization }],
+      attributes: { exclude: ["password"] },
     });
 
     const organization = orgData.get({ plain: true });
 
-    res.render('organization', {
+    res.render("organization", {
       ...organization,
-      logged_in: true
+      logged_in: true,
     });
   } catch (err) {
-    console.log(err)
+    console.log(err);
     res.status(500).json(err);
   }
 });
