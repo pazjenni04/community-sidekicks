@@ -1,5 +1,10 @@
 [
 {
+  "organization_name": "Admin",
+  "email": "admin@gmail.com",
+  "password":"admin1234"
+},
+{
   "organization_name": "NTFB",
   "email": "NTFB@gmail.com",
   "password":"123456789"

@@ -18,20 +18,34 @@
     <header class="display-flex justify-space-between align-center p-2">
       <nav class="navbar navbar-expand-lg navbar-light bg-green">
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-           <a href="/">        
-          <button class="homebtn" id="home">Home</button>
-          </a> 
+          
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/organization">profile</a> 
-        <button class="no-button" id="logout">logout</button>
+
+        <a href="/profile">
+        <button class="profile" id="profile">Profile</button>
+        </a>
+
+        <a href="/api/volunteer">
+        <button class="volunteers"  id="profile">Volunteers</button>
+        </a> 
+
+        <button class="logout" id="logout">logout</button>
         {{else}}
-        <a class="loginbtn" href="/login">Organization Login</a>
-        {{/if}}
-          </div>
+        <a href="/">        
+        <button class="homebtn" id="home">Home</button>
+        </a> 
+
+        <a href="/login">
+        <button class="loginbtn" id="Volunteer"> Organization Login</button>
+        </a>
+
           <a href="/volunteerSignup">        
           <button class="volunteerSignupbtn" id="Volunteer">Volunteer Signup</button>
           </a> 
+
+        {{/if}}
+          
       </nav>
       <h1 href="/">Community Sidekicks</h1>
     </header>

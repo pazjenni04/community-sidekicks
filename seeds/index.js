@@ -12,6 +12,10 @@ const seedDatabase = async () => {
     returning: true,
   });
 
+  const volunteer = await Volunteer.bulkCreate(volData, {
+    individualHooks: true,
+    returning: true,
+  });
 //   for (const volunteer_data of volData
 //   ) {
 //     await Organization.create({
