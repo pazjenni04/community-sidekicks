@@ -33,7 +33,7 @@ const newAccount = async (event) => {
   const newPassword = document.getElementById("password-signup").value.trim();
 
   if (organizationName && newEmail && newPassword) {
-    const response = await fetch("/api/user", {
+    const response = await fetch("/api/organization/signup", {
       method: "POST",
       body: JSON.stringify({
         organization_name: organizationName,

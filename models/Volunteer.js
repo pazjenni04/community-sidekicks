@@ -29,6 +29,13 @@ Volunteer.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    zip_code: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        isNumeric: true,
+      },
+    },
   },
   {
     sequelize,
