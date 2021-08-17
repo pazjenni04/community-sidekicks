@@ -62,24 +62,3 @@ document.addEventListener("DOMContentLoaded", function (event) {
 if (document.getElementById("signupBtn")) {
   document.getElementById("signupBtn").addEventListener("submit", newAccount);
 }
-
-// const validPassword = bcrypt.compare(
-//   req.body.password,
-//   orgData.password,
-//   function (err, validPassword) {
-//     console.log(validPassword);
-
-//     if (!validPassword) {
-//       res
-//         .status(400)
-//         .json({ message: "Incorrect email or password, please try again" });
-//       return;
-//     }
-
-//     req.session.save(() => {
-//       req.session.user_id = orgData.id;
-//       req.session.logged_in = true;
-
-//       res.json({ user: orgData, message: "You are now logged in!" });
-//     });
-//   }
