@@ -24,6 +24,9 @@ Volunteer.init(
     email: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate: {
+        isEmail: true,
+      }
     },
     phone: {
       type: DataTypes.INTEGER,

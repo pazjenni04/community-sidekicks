@@ -13,7 +13,12 @@ html {
 }
 
 .loginbtn,
+.profilebtn,
+.logoutbtn,
 .homebtn,
+.profile,
+.volunteers,
+.logout,
 .volunteerSignupbtn {
   font-weight: 700;
   background-color: forestgreen;

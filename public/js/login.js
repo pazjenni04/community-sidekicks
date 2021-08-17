@@ -16,7 +16,7 @@ let submitForm = form.submit.addEventListener("click", (event) => {
       headers: { "Content-Type": "application/json" },
     }).then(function (response) {
       if (response.ok) {
-        document.location.replace("/api/organization/profile");
+        document.location.replace("/profile");
       } else {
         alert("Login failed. Try again.");
       }
