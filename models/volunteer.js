@@ -38,7 +38,14 @@ Volunteer.init(
       validate: {
         isNumeric: true,
       },
+      
     },
+    date_signup: {
+      type: DataTypes.DATE, //double check data type
+      allowNull: false,
+      defaultValue: new Date()
+    },
+    
   },
   {
     sequelize,
