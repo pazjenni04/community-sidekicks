@@ -1,5 +1,5 @@
 const Organization = require("./organization"); //organization route
-const Volunteer = require("./Volunteer"); //volunteer route
+const Volunteer = require("./volunteer"); //volunteer route
 
 Organization.hasMany(Volunteer, {
   foreignKey: "Volunteer.id",
