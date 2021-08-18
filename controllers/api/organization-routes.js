@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const Organization = require("../../models/organization");
-// const withAuth = require('../../utils/auth');
 
 //creates organization account
 router.post("/", async (req, res) => {
