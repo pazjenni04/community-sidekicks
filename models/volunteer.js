@@ -29,7 +29,7 @@ Volunteer.init(
       }
     },
     phone: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     zip_code: {
@@ -38,10 +38,9 @@ Volunteer.init(
       validate: {
         isNumeric: true,
       },
-      
     },
     date_signup: {
-      type: DataTypes.DATE, //double check data type
+      type: DataTypes.DATEONLY, //double check data type
       allowNull: false,
       defaultValue: new Date()
     },

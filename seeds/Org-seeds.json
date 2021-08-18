@@ -1,12 +1,31 @@
 [
 {
-  "organization_name": "Admin",
-  "email": "admin@gmail.com",
-  "password":"admin1234"
+  "organization_name": "Minnie's Food Pantry",
+  "organization_description": "Description goes here",
+  "email": "MinniesFoodPantry@gmail.com",
+  "phone":"504-862-9752",
+  "password": "password123"
 },
 {
-  "organization_name": "NTFB",
+  "organization_name": "North Texas Food Bank",
+  "organization_description": "Description goes here",
   "email": "NTFB@gmail.com",
-  "password":"123456789"
+  "phone":"214-456-7889",
+  "password": "password123"
+},
+{
+  "organization_name": "St. Vincent de Paul",
+  "organization_description": "Description goes here",
+  "email": "StVincentdePaul@gmail.com",
+  "phone":"504-862-9752",
+  "password": "password123"
+},
+{
+  "organization_name": "White Rose Women's Center",
+  "organization_description": "Description goes here",
+  "email": "WhiteRoseCenter@gmail.com",
+  "phone":"504-862-9752",
+  "password": "password123"
 }
+
 ]

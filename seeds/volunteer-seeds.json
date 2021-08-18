@@ -3,48 +3,48 @@
     "first_name": "Jane",
     "last_name": "Doe",
     "email": "jane.doe@gmail.com",
-    "phone": "1234567890",
-    "zip_code": 75234
+    "phone": "214-987-4569",
+    "zip_code": 75234,
+    "date_signup":"2021-08-18"
   },
   {
     "first_name": "John",
     "last_name": "Doe",
     "email": "john.doe@gmail.com",
-    "phone": "1234567890",
-    "zip_code": 75205
+    "phone": "214-987-4569",
+    "zip_code": 75205,
+    "date_signup":"2021-08-18"
   },
   {
     "first_name": "Pam",
     "last_name": "Beasly",
     "email": "pam.beasly@gmail.com",
-
-    "phone": "2148544236",
-    "zip_code": 75019
+    "phone": "214-987-4569",
+    "zip_code": 75019,
+    "date_signup":"2021-08-18"
   },
   {
     "first_name": "Jim",
     "last_name": "Halpert",
     "email": "jim.halpert@gmail.com",
-
-
-    "phone": "2147483647",
-
-    "zip_code": 75001
+    "phone": "214-915-1976",
+    "zip_code": 75001,
+    "date_signup":"2021-08-18"
   },
   {
     "first_name": "Michael",
     "last_name": "Scott",
     "email": "michael.halpert@gmail.com",
-
-    "phone": "2147483647",
-
-    "zip_code": 75043
+    "phone": "214-168-7894",
+    "zip_code": 75043,
+    "date_signup":"2021-08-18"
   },
   {
     "first_name": "Dwight",
     "last_name": "Schrute",
     "email": "dwight.schrute@gmail.com",
-    "phone": "2149514263",
-    "zip_code": 75052
+    "phone": "214-657-4569",
+    "zip_code": 75052,
+    "date_signup":"2021-08-18"
   }
 ]
