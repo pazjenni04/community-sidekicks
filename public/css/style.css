@@ -3,12 +3,14 @@ h1 {
   font-family: "Palette Mosaic", cursive;
   font-size: 100px !important;
   color: rgb(218, 247, 166);
+  /* color: rgb(128, 241, 128); Suggested NEW run by group tonight*/
   text-shadow: black 3px 3px;
 }
 
 header,
 html {
   background: rgb(198, 192, 12);
+  /* background: rgb(253, 192, 0); Suggested NEW*/
   padding: 5px, 0px, 0px, 5px;
 }
 
@@ -22,6 +24,7 @@ html {
 .volunteerSignupbtn {
   font-weight: 700;
   background-color: forestgreen;
+  /* background-color: rgb(128, 241, 128); suggested NEW*/
   color: black;
   border-radius: 7px;
   padding: 5px;
@@ -31,4 +34,8 @@ html {
 
 p {
   font-family: "Roboto", sans-serif;
+}
+
+label {
+  font-weight: bold;
 }

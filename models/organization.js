@@ -22,6 +22,14 @@ Organization.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    organization_description: {
+      type: DataTypes.TEXT,
+      allowNull: true,
+    },
+    phone: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
