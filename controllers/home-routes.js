@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { Volunteer, Organization } = require("../models");
+const withAuth = require('../utils/helpers');
 
 // renders homepage
 router.get("/", async (req, res) => {
@@ -43,7 +44,7 @@ router.post("/logout", (req, res) => {
 });
 
 // Use withAuth middleware to prevent access to route
-router.get("/profile", async (req, res) => {
+router.get("/profile", withAuth, async (req, res) => {
   try {
     console.log(req.session.user_id)
     // Find the logged in organization based on the session ID

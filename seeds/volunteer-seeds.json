@@ -17,28 +17,28 @@
     "first_name":"Pam", 
     "last_name":"Beasly",
     "email": "pam.beasly@gmail.com",
-    "phone": "000000000",
+    "phone": "2147483647",
     "zip_code": 75019
   },
   {
     "first_name":"Jim", 
     "last_name":"Halpert",
     "email": "jim.halpert@gmail.com",
-    "phone": "000000000",
+    "phone": "2147483647",
     "zip_code": 75001
   },
   {
     "first_name":"Michael", 
     "last_name":"Scott",
     "email": "michael.halpert@gmail.com",
-    "phone": "000000000",
+    "phone": "2147483647",
     "zip_code": 75043
   },
   {
     "first_name":"Dwight", 
     "last_name":"Schrute",
     "email": "dwight.schrute@gmail.com",
-    "phone": "000000000",
+    "phone": "2149514263",
     "zip_code": 75052
   }
 ]
