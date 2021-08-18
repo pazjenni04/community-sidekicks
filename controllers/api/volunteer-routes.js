@@ -41,7 +41,7 @@ router.get("/all", async (req, res) => {
 });
 
 // GET volunteers based on zip code
-router.get("/:id", async (req, res) => {
+router.get("/zip", async (req, res) => {
   try {
     const dbvolunteersData = await Volunteer.findByPk(req.params.id, {
       include: [
