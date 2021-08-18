@@ -8,8 +8,7 @@ const newVolunteer = async (event) => {
   const volPhone = document.getElementById("volphone").value.trim();
   const volzip = document.getElementById("volzip").value.trim();
 
-
-  if (volFname && volLname && volEmail && volPhone) {
+  if (volFname && volLname && volEmail && volPhone && volzip) {
     const response = await fetch("/api/volunteers", {
       method: "POST",
       body: JSON.stringify({
@@ -21,7 +20,6 @@ const newVolunteer = async (event) => {
       }),
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json",
       },
     });
 

@@ -2,41 +2,41 @@
   {
     "first_name": "Jane",
     "last_name": "Doe",
-    "email":"jane.doe@gmail.com",
+    "email": "jane.doe@gmail.com",
     "phone": "1234567890",
     "zip_code": 75234
   },
   {
-    "first_name":"John", 
-    "last_name":"Doe",
+    "first_name": "John",
+    "last_name": "Doe",
     "email": "john.doe@gmail.com",
     "phone": "1234567890",
     "zip_code": 75205
   },
   {
-    "first_name":"Pam", 
-    "last_name":"Beasly",
+    "first_name": "Pam",
+    "last_name": "Beasly",
     "email": "pam.beasly@gmail.com",
-    "phone": "000000000",
+    "phone": "2148544236",
     "zip_code": 75019
   },
   {
-    "first_name":"Jim", 
-    "last_name":"Halpert",
+    "first_name": "Jim",
+    "last_name": "Halpert",
     "email": "jim.halpert@gmail.com",
-    "phone": "000000000",
+    "phone": "4698524568",
     "zip_code": 75001
   },
   {
-    "first_name":"Michael", 
-    "last_name":"Scott",
+    "first_name": "Michael",
+    "last_name": "Scott",
     "email": "michael.halpert@gmail.com",
-    "phone": "000000000",
+    "phone": "9722225523",
     "zip_code": 75043
   },
   {
-    "first_name":"Dwight", 
-    "last_name":"Schrute",
+    "first_name": "Dwight",
+    "last_name": "Schrute",
     "email": "dwight.schrute@gmail.com",
     "phone": "000000000",
     "zip_code": 75052
