@@ -46,7 +46,7 @@ const newAccount = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace("/api/organization/profile");
+      document.location.replace("/profile");
     } else {
       alert("Failed to sign up");
     }

@@ -55,14 +55,14 @@ router.get("/all", async (req, res) => {
   }
 });
 
-// GET one volunteer
-router.get("/:id", async (req, res) => {
+// GET volunteers based on zip code
+router.get("/zip", async (req, res) => {
   try {
     const dbvolunteersData = await Volunteer.findByPk(req.params.id, {
       include: [
         {
           model: Volunteer,
-          where: { first_name: req.body.first_name },
+          where: { zip_code: req.body.zip_code },
         },
       ],
     });

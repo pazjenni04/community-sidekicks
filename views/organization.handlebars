@@ -8,3 +8,24 @@
 <h4>Email on file:</h4>
 <p>{{organization.email}}</p>
 
+<p>Search for volunteers within your zipcode</p>
+<div class="row col-4" id="search-container">
+  <nav class="navbar navbar-light bg-light">
+    <form class="form-inline" id="submit-form">
+      <input
+        class="form-control mr-sm-2"
+        id="input"
+        type="search"
+        placeholder="Zip code"
+        aria-label="Search"
+      />
+      <button
+        class="btn btn-outline-success my-2 my-sm-0"
+        id="searchBtn"
+        type="submit"
+      >Search</button>
+    </form>
+  </nav>
+</div>
+
+<script src="./js/zipcode.js"></script>
