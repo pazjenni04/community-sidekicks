@@ -12,7 +12,11 @@
 
 ## Deployment
 
-https://git.heroku.com/community-sidekicks.git
+https://community-sidekicks.herokuapp.com/
+
+## Github Repository
+
+https://github.com/pazjenni04/community-sidekicks
 
 ## Maintainers
 
