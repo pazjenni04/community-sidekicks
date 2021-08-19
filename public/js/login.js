@@ -1,6 +1,6 @@
 //form to login to an existing account
 const form = {
-  submit: document.querySelector("#submitBtn"),
+  submit: document.getElementById("submitBtn"),
 };
 
 let submitForm = form.submit.addEventListener("click", (event) => {
@@ -33,7 +33,7 @@ const newAccount = async (event) => {
   const newPassword = document.getElementById("password-signup").value.trim();
 
   if (organizationName && newEmail && newPassword) {
-    const response = await fetch("/api/organization/signup", {
+    const response = await fetch("/api/organization/", {
       method: "POST",
       body: JSON.stringify({
         organization_name: organizationName,

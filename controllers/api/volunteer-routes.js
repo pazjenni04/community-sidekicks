@@ -68,7 +68,7 @@ router.get("/zip", async (req, res) => {
 
     const volunteerAvailable = dbvolunteersData.get({ plain: true });
     res.render("volunteers", {
-      volunteersAvailable,
+      volunteerAvailable,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
