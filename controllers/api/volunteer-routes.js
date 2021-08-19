@@ -4,9 +4,8 @@ const Volunteer = require("../../models/volunteer");
 const Organization = require("../../models/organization");
 const withAuth = require("../../utils/helpers");
 
-
 //create new volunteer
-router.post('/', async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const newVolunteer = await Volunteer.create(req.body);
 
@@ -17,9 +16,8 @@ router.post('/', async (req, res) => {
   }
 });
 
-
 // GET all volunteers for account
-router.get("/", withAuth ,async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   try {
     const dbvolunteersData = await Volunteer.findAll();
 
@@ -29,6 +27,7 @@ router.get("/", withAuth ,async (req, res) => {
 
     res.render("volunteers", {
       allVolunteers,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     console.log(err);
