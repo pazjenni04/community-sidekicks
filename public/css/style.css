@@ -39,3 +39,8 @@ p {
 label {
   font-weight: bold;
 }
+
+#partner-icons {
+  height: 100px;
+  width: 100px;
+}
