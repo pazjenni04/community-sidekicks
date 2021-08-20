@@ -1,5 +1,6 @@
 //need to create event listener for the signup btn for volunteer to send info the back end
 const newVolunteer = async (event) => {
+  console.log("TESTING");
   event.preventDefault();
 
   const volFname = document.getElementById("first_name").value.trim();
@@ -9,7 +10,7 @@ const newVolunteer = async (event) => {
   const volzip = document.getElementById("volzip").value.trim();
 
   if (volFname && volLname && volEmail && volPhone && volzip) {
-    const response = await fetch("/api/volunteers", {
+    const response = await fetch("/api/volunteer", {
       method: "POST",
       body: JSON.stringify({
         first_name: volFname,
